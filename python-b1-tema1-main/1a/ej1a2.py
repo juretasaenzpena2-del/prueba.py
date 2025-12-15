@@ -42,8 +42,21 @@ Exemple:
 '''
 
 def sum_odd_numbers(list_numbers):
-    # Write here your code
-    pass
+    # Validar que el parametro sea una lista
+    if not isinstance(list_numbers, list):
+            raise ValueError("El parametro debe ser una lista de numeros enteros.")
+    
+    total= 0
+    for num in list_numbers:
+          # Validar que cada elemento sea entero y >= 0
+          if not isinstance (num, int) or num < 0:
+                    raise ValueError("La lista debe contener solo numeros enteros mayores o iguales a 0.")
+          
+          #Sumar solo los numeros impares
+          if num % 2 !=0:
+                 total += num
+
+    return total
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script

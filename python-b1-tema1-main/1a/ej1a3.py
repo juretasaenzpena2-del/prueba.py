@@ -31,9 +31,17 @@ Exemple:
 
 '''
 
-def invert_text(text_chain:str):
-    # Write here your code
-    pass
+def invert_text(text_chain):
+    # Validar que el parametro sea un string
+    if not isinstance (text_chain, str):
+        raise ValueError("El paarametro debe ser una cadena de texto (string).")
+
+    inverted_text=""
+
+    #Recorrer el texto desde el final hasta el inicio
+    for i in range (len(text_chain)-1,-1,-1):
+        inverted_text += text_chain[i]
+    return inverted_text
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
